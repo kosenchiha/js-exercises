@@ -6,7 +6,14 @@
   Write a function that transforms numbers into the format £0.00
 */
 
-function formatCurrency() {}
+function formatCurrency(formating) {
+  //return "£" + formating.toFixed(2);
+  return formating.toLocaleString("en-GB", {
+    style: "currency",
+    currency: "GBP",
+    minimumFractionDigits: 2
+  });
+}
 
 /* DO NOT EDIT BELOW THIS LINE */
 /* --------------------------- */

@@ -7,8 +7,24 @@
   Find a way to add 1% to all currency conversions (think about the DRY principle)
 */
 
-function convertToUSD(price) {}
-function convertToBRL(price) {}
+function convertToUSD(price) {
+  var exchangePrice = price * 1.4 * 1.01;
+  var inUSDFormat = exchangePrice.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 2
+  });
+  return inUSDFormat;
+}
+function convertToBRL(price) {
+  var exchangePrice = price * 5 * 1.01; // exchange rate is £1 = R$5
+  var inBRLFormat = exchangePrice.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    minimumFractionDigits: 2
+  });
+  return inBRLFormat;
+}
 
 /* DO NOT EDIT BELOW THIS LINE */
 /* --------------------------- */
